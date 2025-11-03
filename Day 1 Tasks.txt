@@ -1,0 +1,60 @@
+Please start with these challenges for today
+**Reverse Words in a Sentence**
+Write a JavaScript function to reverse the order of words in a sentence.
+Example:
+reverseWords("hello world from javascript");
+Output: "javascript from world hello"
+---
+**Count Vowels in a String**
+Write a function that counts the number of vowels (a, e, i, o, u) in a given string.
+Example:
+countVowels("numentica ui solutions");
+Output: 9
+---
+:three: **Find Longest Word in a Sentence**
+Write a function to return the longest word in a given sentence.
+Example:
+findLongestWord("be kind whenever possible");
+:arrow_right: Output: "whenever"
+---
+**Capitalize First Letter of Each Word**
+Write a function that capitalizes the first letter of each word in a sentence.
+Example:
+capitalizeWords("numentica ui private limited");
+Output: "Numentica Ui Private Limited"
+---
+**Find Range (Max - Min) in Array**
+Write a function to return the difference between the largest and smallest numbers in an array.
+Example:
+findRange([3, 45, 12, 7, 89]);
+Output: 86
+---
+**Check Palindrome**
+Write a function to check if a string is a palindrome (reads the same backward).
+Example:
+isPalindrome("madam"); // true
+isPalindrome("hello"); // false
+---
+**Count Occurrence of Each Character**
+Write a function that returns an object showing how many times each character appears in a string.
+Example:
+countChars("hello");
+Output: { h:1, e:1, l:2, o:1 }
+---
+**Get Unique Characters**
+Write a function to return all characters that appear only once in a string.
+Example:
+uniqueChars("success");
+Output: "ue"
+---
+**Replace Numbers with ‘#’**
+Write a function to replace all digits in a string with the symbol `#`.
+Example:
+maskNumbers("My pin is 1234 and code 56");
+Output: "My pin is #### and code ##"
+---
+**Merge Two Arrays and Remove Duplicates**
+Write a function to merge two arrays and remove duplicate elements.
+Example:
+mergeUnique([1, 2, 3], [3, 4, 5]);
+Output: [1, 2, 3, 4, 5]
