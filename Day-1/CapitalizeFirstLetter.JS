@@ -5,7 +5,7 @@ capitalizeWords("numentica ui private limited");
 Output: "Numentica Ui Private Limited"*/
 
 
-function capitalizeWords(inputFromUser) {
+function capitalizeFirstLetterOfEachWord(inputFromUser) {
     console.log("Input: "+inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
@@ -41,4 +41,4 @@ function capitalizeWords(inputFromUser) {
 }
 
 
-capitalizeWords("numentica ui private limited");
+capitalizeFirstLetterOfEachWord("numentica ui private limited");

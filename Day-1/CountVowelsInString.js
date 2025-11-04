@@ -4,7 +4,7 @@ Example:
 countVowels("numentica ui solutions");
 Output: 9*/
 
-function countVowels(inputFromUser) {
+function countVowelsInString(inputFromUser) {
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -34,4 +34,4 @@ function countVowels(inputFromUser) {
 }
 
 
-countVowels("numentica ui solutions");
+countVowelsInString("numentica ui solutions");

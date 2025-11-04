@@ -5,7 +5,7 @@ countChars("hello");
 Output: { h:1, e:1, l:2, o:1 }
 ---*/
 
-function countChars(inputFromUser) {
+function countUniqueCharacters(inputFromUser) {
   console.log("Input: "+inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
@@ -38,5 +38,5 @@ function countChars(inputFromUser) {
   return true;
 }
 
-countChars("hello");
-countChars("hello world");
+countUniqueCharacters("hello");
+countUniqueCharacters("hello world");

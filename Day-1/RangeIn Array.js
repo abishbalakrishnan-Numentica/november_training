@@ -6,7 +6,7 @@ Output: 86
 ---*/
 
 
-function findRange(inputFromUser) {
+function findRangeInArray(inputFromUser) {
  //Edge Case 1: To check if the input is Array
     if (!Array.isArray(inputFromUser) || inputFromUser.length === 0) {
     console.error("Error: Please provide a non-empty array of numbers.");
@@ -41,5 +41,5 @@ return true;
 }
 
 
-findRange([3, 45, 12, 7, 89]);
-findRange([89]);
+findRangeInArray([3, 45, 12, 7, 89]);
+findRangeInArray([89]);

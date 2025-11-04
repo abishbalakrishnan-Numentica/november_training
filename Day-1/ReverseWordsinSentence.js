@@ -6,7 +6,7 @@ Output: "javascript from world hello"
 ---*/
 
 
-function reverseWords(inputFromUser){
+function reverseWordsInSentence(inputFromUser){
   console.log("Input: "+inputFromUser);
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
@@ -46,4 +46,4 @@ for (let i = wordList.length - 1; i >= 0; i--) {
   return true;
 }
 
-reverseWords("hello world from javascript")
+reverseWordsInSentence("hello world from javascript")

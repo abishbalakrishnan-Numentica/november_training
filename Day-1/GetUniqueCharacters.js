@@ -5,7 +5,7 @@ uniqueChars("success");
 Output: "ue"*/
 
 
-function uniqueChars(inputFromUser) {
+function uniqueCharacters(inputFromUser) {
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -36,5 +36,5 @@ function uniqueChars(inputFromUser) {
 }
 
 
-uniqueChars("success");
-uniqueChars("devendar");
+uniqueCharacters("success");
+uniqueCharacters("devendar");

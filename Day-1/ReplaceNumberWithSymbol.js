@@ -5,7 +5,7 @@ maskNumbers("My pin is 1234 and code 56");
 Output: "My pin is #### and code ##*/
 
 
-function maskNumbers(inputFromUser){
+function maskDigitsInSymbol(inputFromUser){
   console.log("Input: "+inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
@@ -32,4 +32,4 @@ function maskNumbers(inputFromUser){
    return true;
 
 }
-maskNumbers("My pin is 1234 and code 56")
+maskDigitsInSymbol("My pin is 1234 and code 56")
