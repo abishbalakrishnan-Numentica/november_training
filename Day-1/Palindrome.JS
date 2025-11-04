@@ -7,6 +7,7 @@ isPalindrome("hello"); // false*/
 
 function isPalindrome(inputFromUser) {
  //Edge Case 1: To check if the input is String
+   outputResult=false;
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
     return false;
@@ -22,5 +23,5 @@ function isPalindrome(inputFromUser) {
   return true;
 }
 
-console.log(isPalindrome("madam")); // true
-console.log(isPalindrome("hello")); // false
+console.log("Output : "+ isPalindrome("madam")); // true
+console.log("Output: "+ isPalindrome("hello")); // false

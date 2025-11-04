@@ -6,6 +6,7 @@ Output: { h:1, e:1, l:2, o:1 }
 ---*/
 
 function countChars(inputFromUser) {
+  console.log("Input: "+inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -17,20 +18,25 @@ function countChars(inputFromUser) {
     return false;
   }
 
-  let modifiedInput = inputFromUser.toLowerCase().replace(/\s+/g, "")
-  let result = {};
+  let modifiedInput = inputFromUser.toLowerCase()
+  let outputResult = {};
 
-  for (let i = 0; i < modifiedInput.length; i++) {
-    let char = modifiedInput[i];
-    if (result[char]) {
-      result[char] += 1;
+    for (let i = 0; i < modifiedInput.length; i++) {
+    let character = modifiedInput[i];
+     if (character === " ") {
+      continue; 
+    }
+
+    if (outputResult[character]) {
+      outputResult[character] += 1;
     } else {
-      result[char] = 1;
+      outputResult[character] = 1;
     }
   }
 
-  return result;
+  console.log("Output:", outputResult);
+  return true;
 }
 
-
-console.log(countChars("hello"));
+countChars("hello");
+countChars("hello world");

@@ -6,6 +6,7 @@ Output: "Numentica Ui Private Limited"*/
 
 
 function capitalizeWords(inputFromUser) {
+    console.log("Input: "+inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -19,24 +20,25 @@ function capitalizeWords(inputFromUser) {
 
   inputFromUser = inputFromUser.toLowerCase();
   let outputResult = "";
-  let capitalizeNext = true;
+  let capitalizeWord = true;
 
   for (let i = 0; i < inputFromUser.length; i++) {
     let character = inputFromUser[i];
       if (character === " ") {
       outputResult+= character;
-      capitalizeNext = true;
+      capitalizeWord = true;
     }
-     else if (capitalizeNext) {
+     else if (capitalizeWord) {
         outputResult+= character.toUpperCase();
-        capitalizeNext = false;
+        capitalizeWord = false;
     } else 
     {
         outputResult += character;
     }
     }
-  return outputResult;
+  console.log("Output: "+outputResult)
+  return true;
 }
 
 
-console.log(capitalizeWords("numentica ui private limited"));
+capitalizeWords("numentica ui private limited");

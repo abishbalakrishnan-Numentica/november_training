@@ -6,6 +6,7 @@ findLongestWord("be kind whenever possible");
 
 
 function findLongestWord(inputFromUser) {
+  console.log("The Input sentence is: "+ inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -17,18 +18,18 @@ function findLongestWord(inputFromUser) {
     return false;
   }
 
-  let word = "";
+  let currentWord  = "";
   let longestWord= "";
 
   for (let i = 0; i <= inputFromUser.length; i++) {
-    let char = inputFromUser[i] || " "; 
-    if (char !== " ") {
-      word += char;
+    let character = inputFromUser[i] || " "; 
+    if (character !== " ") {
+      currentWord  += character;
     } else {
-      if (word.length > longestWord.length) {
-        longestWord = word;
+      if (currentWord .length > longestWord.length) {
+        longestWord = currentWord ;
       }
-      word = "";
+      currentWord  = "";
     }
   }
   console.log("The Longest word in the given Sentence is: "+longestWord)

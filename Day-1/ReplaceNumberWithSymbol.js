@@ -5,7 +5,8 @@ maskNumbers("My pin is 1234 and code 56");
 Output: "My pin is #### and code ##*/
 
 
-function maskNumbers(sentence){
+function maskNumbers(inputFromUser){
+  console.log("Input: "+inputFromUser)
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -17,17 +18,18 @@ function maskNumbers(sentence){
     return false;
   }
 
-   let result=""
-   for(let i=0;i<sentence.length;i++){
-    let char=sentence[i]
-   if (char >= '0' && char <= '9') {
-      result += "#";
+   let outputResult=""
+   for(let i=0;i<inputFromUser.length;i++){
+    let character=inputFromUser[i]
+   if (character >= '0' && character <= '9') {
+      outputResult += "#";
     } else {
-      result += char;
+      outputResult += character;
     }
 
    }
-   console.log(result)
+   console.log("Output: "+outputResult);
+   return true;
 
 }
 maskNumbers("My pin is 1234 and code 56")

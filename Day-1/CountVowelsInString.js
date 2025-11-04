@@ -18,12 +18,12 @@ function countVowels(inputFromUser) {
 
   inputFromUser = inputFromUser.toLowerCase();
   let count = 0;
-  let vowels = "aeiouAEIOU";
+  let vowels = "aeiou";
 
   for (let i = 0; i < inputFromUser.length; i++) {
-    let char = inputFromUser[i];
+    let character = inputFromUser[i];
     for (let j = 0; j < vowels.length; j++) {
-      if (char === vowels[j]) {
+      if (character === vowels[j]) {
         count++;
         break;
       }

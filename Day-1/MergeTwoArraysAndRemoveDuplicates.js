@@ -6,34 +6,37 @@ Output: [1, 2, 3, 4, 5]*/
 
 
 function mergeUniqueElements(firstList, secondList) {
-     if (!Array.isArray(firstList) || !Array.isArray(secondList)) {
-    return "Error: Both inputs must be arrays.";
+
+   if (!Array.isArray(firstList) || !Array.isArray(secondList)) {
+    console.error("Error: Both inputs must be arrays.");
+    return false;
   }
    if (firstList.length === 0 && secondList.length === 0) {
-    return [];
+    console.error("Empty String");
+    return false;
   }
-  let merged = [];
+  let outputResult = [];
   
 
   for (let i = 0; i < firstList.length; i++) {
-    merged[merged.length] = firstList[i];
+    outputResult[i] = firstList[i];
   }
 
   for (let i = 0; i < secondList.length; i++) {
-    let exists = false;
-    for (let j = 0; j < merged.length; j++) {
-      if (secondList[i] === merged[j]) {
-        exists = true;
+    let alreadyExists = false;
+    for (let j = 0; j < outputResult.length; j++) {
+      if (secondList[i] === outputResult[j]) {
+        alreadyExists = true;
         break;
       }
     }
-    if (!exists) {
-      merged[merged.length] = secondList[i];
+    if (!alreadyExists) {
+      outputResult[outputResult.length] = secondList[i];
     }
   }
-
-  return merged;
+  console.log(`Merged result of ${JSON.stringify(firstList)} & ${JSON.stringify(secondList)} is ${JSON.stringify(outputResult)}`)
+  return true;
 }
 
 
-console.log(mergeUnique([1, 2, 3], [3, 4, 5]));
+mergeUniqueElements([1, 2, 3], [3, 4, 5]);

@@ -7,6 +7,7 @@ Output: "javascript from world hello"
 
 
 function reverseWords(inputFromUser){
+  console.log("Input: "+inputFromUser);
  //Edge Case 1: To check if the input is String
   if (typeof inputFromUser !== "string") {
     console.error( "Error: Input must be a string.");
@@ -18,30 +19,31 @@ function reverseWords(inputFromUser){
     return false;
   }
 
-let words=[];
-let word=""
+let wordList =[];
+let currentWord =""
 let reverseSentence=""
 for(let i=0;i<inputFromUser.length;i++){
-    let char=inputFromUser[i];
-    if(char!==" "){
-        word+=char
+    let character=inputFromUser[i];
+    if(character!==" "){
+        currentWord +=character
     }
-    else{
-        if(word!=="")
-            words.push(word)
-        word=""
+    else if(currentWord!==""){
+            wordList.push(currentWord)
+        currentWord=""
     }  
 }
-  if(word!==""){
-        words.push(word)
+  if(currentWord!=="")
+    {
+        wordList.push(currentWord)
     }
-for (let i = words.length - 1; i >= 0; i--) {
-    reverseSentence += words[i];
+for (let i = wordList.length - 1; i >= 0; i--) {
+    reverseSentence += wordList[i];
     if (i !== 0) {
       reverseSentence += " ";
     }
   }
-  console.log(reverseSentence);
+  console.log("Output: "+reverseSentence);
+  return true;
 }
 
 reverseWords("hello world from javascript")
