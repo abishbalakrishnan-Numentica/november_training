@@ -18,13 +18,13 @@ function findLongestWord(inputFromUser) {
     return false;
   }
 
-  let currentWord  = "";
-  let longestWord= "";
+  let currentWord = "";
+  let longestWord = "";
 
   for (let i = 0; i <= inputFromUser.length; i++) {
     let character = inputFromUser[i]; 
     if (character !== " ") {
-      currentWord  += character;
+      currentWord+= character;
     } else {
       if (currentWord .length > longestWord.length) {
         longestWord = currentWord ;
