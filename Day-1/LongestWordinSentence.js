@@ -22,7 +22,7 @@ function findLongestWord(inputFromUser) {
   let longestWord= "";
 
   for (let i = 0; i <= inputFromUser.length; i++) {
-    let character = inputFromUser[i] || " "; 
+    let character = inputFromUser[i]; 
     if (character !== " ") {
       currentWord  += character;
     } else {
