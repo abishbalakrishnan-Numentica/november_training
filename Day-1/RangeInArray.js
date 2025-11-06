@@ -10,13 +10,13 @@ function findRangeInArray(inputFromUser) {
  //Edge Case 1: To check if the input is Array
     if (!Array.isArray(inputFromUser) || inputFromUser.length === 0) {
     console.error("Error: Please provide a non-empty array of numbers.");
-    return false;
+    return null;
   }
    //Edge Case 2: To check if the input contains any characters or symbols
-for (let i = 0; i < inputFromUser.length; i++) {
-  if (typeof inputFromUser[i] !== "number" || isNaN(inputFromUser[i])) {
+  for (let i = 0; i < inputFromUser.length; i++) {
+   if (typeof inputFromUser[i] !== "number" || isNaN(inputFromUser[i])) {
     console.error( "Error: Array must contain only numbers.");
-    return false;
+    return null;
   }
 }
 if(inputFromUser.length===1){
@@ -34,12 +34,13 @@ if(inputFromUser.length===1){
     }
   }
 if(inputFromUser.length!==1){
-let outputResult=maxValue-minValue;
-console.log(`The difference between the largest number ${maxValue} and smallest number ${minValue} in an array is ${outputResult}`);
-return true;
+let finalResult=maxValue-minValue;
+console.log(`The difference between the largest number ${maxValue} and smallest number ${minValue} in an array is ${finalResult}`);
+return outputResult;
 }
 }
 
 
 findRangeInArray([3, 45, 12, 7, 89]);
 findRangeInArray([89]);
+

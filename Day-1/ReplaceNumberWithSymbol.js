@@ -7,29 +7,26 @@ Output: "My pin is #### and code ##*/
 
 function maskDigitsInSymbol(inputFromUser){
   console.log("Input: "+inputFromUser)
- //Edge Case 1: To check if the input is String
-  if (typeof inputFromUser !== "string") {
-    console.error( "Error: Input must be a string.");
-    return false;
-  }
- //Edge Case 2: To check if the input is empty String
-  if (inputFromUser.trim().length === 0) {
-    console.error("Empty String");
-    return false;
-  }
+  const modifiedInput = inputFromUser.trim();
+  //Edge Case : To check if the input is Invalid
+   if (typeof modifiedInput !== "string" || modifiedInput.trim().length === 0) {
+     console.error("Error: Input must be a non-empty string.");
+     return null;
+    }
 
-   let outputResult=""
-   for(let i=0;i<inputFromUser.length;i++){
-    let character=inputFromUser[i]
+   let userOutput=""
+   for(let i=0;i<modifiedInput.length;i++){
+    let character=modifiedInput[i]
    if (character >= '0' && character <= '9') {
-      outputResult += "#";
+      userOutput += "#";
     } else {
-      outputResult += character;
+      userOutput += character;
     }
 
    }
-   console.log("Output: "+outputResult);
-   return true;
+   return userOutput;
 
 }
-maskDigitsInSymbol("My pin is 1234 and code 56")
+console.log("Output: "+ maskDigitsInSymbol("My pin is 1234 and code 56"));
+console.log("Output: "+ maskDigitsInSymbol(""));
+console.log("Output: "+ maskDigitsInSymbol("   "));

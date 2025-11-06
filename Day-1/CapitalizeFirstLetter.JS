@@ -6,39 +6,28 @@ Output: "Numentica Ui Private Limited"*/
 
 
 function capitalizeFirstLetterOfEachWord(inputFromUser) {
-    console.log("Input: "+inputFromUser)
- //Edge Case 1: To check if the input is String
-  if (typeof inputFromUser !== "string") {
-    console.error( "Error: Input must be a string.");
-    return false;
-  }
- //Edge Case 2: To check if the input is empty String
-  if (inputFromUser.trim().length === 0) {
-    console.error("Empty String");
-    return false;
-  }
+  console.log("The Input sentence is: "+ inputFromUser)
+  let trimmedInput = inputFromUser.trim();
+ //Edge Case 1: To check if the input is Invalid
+   if (typeof trimmedInput !== "string" || trimmedInput.trim().length === 0) {
+     console.error("Error: Input must be a non-empty string.");
+     return null;
+    }
+  const modifiedInput= inputFromUser.toLowerCase();
+  let userOutput = "";
 
-  inputFromUser = inputFromUser.toLowerCase();
-  let outputResult = "";
-  let capitalizeWord = true;
+for (let i = 0; i < modifiedInput.length; i++) {
+    let character = modifiedInput[i];
 
-  for (let i = 0; i < inputFromUser.length; i++) {
-    let character = inputFromUser[i];
-      if (character === " ") {
-      outputResult+= character;
-      capitalizeWord = true;
-    }
-     else if (capitalizeWord) {
-        outputResult+= character.toUpperCase();
-        capitalizeWord = false;
-    } else 
-    {
-        outputResult += character;
-    }
-    }
-  console.log("Output: "+outputResult)
-  return true;
+    if (i === 0 || modifiedInput[i - 1] === " ") {
+      userOutput += character.toUpperCase();
+    } else {
+      userOutput += character;
+  }
 }
+  return userOutput;
+}
+console.log("Output: "+capitalizeFirstLetterOfEachWord("numentica ui private limited"));
+console.log("Output: "+capitalizeFirstLetterOfEachWord(""));
+console.log("Output: "+capitalizeFirstLetterOfEachWord("   "));
 
-
-capitalizeFirstLetterOfEachWord("numentica ui private limited");

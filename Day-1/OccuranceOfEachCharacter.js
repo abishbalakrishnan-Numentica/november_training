@@ -7,19 +7,15 @@ Output: { h:1, e:1, l:2, o:1 }
 
 function countUniqueCharacters(inputFromUser) {
   console.log("Input: "+inputFromUser)
- //Edge Case 1: To check if the input is String
-  if (typeof inputFromUser !== "string") {
-    console.error( "Error: Input must be a string.");
-    return false;
-  }
- //Edge Case 2: To check if the input is empty String
-  if (inputFromUser.trim().length === 0) {
-    console.error("Empty String");
-    return false;
-  }
+ let trimmedInput = inputFromUser.trim();
+ //Edge Case 1: To check if the input is Invalid
+   if (typeof trimmedInput !== "string" || trimmedInput.trim().length === 0) {
+     console.error("Error: Input must be a non-empty string.");
+     return null;
+    }
 
-  let modifiedInput = inputFromUser.toLowerCase()
-  let outputResult = {};
+  const modifiedInput = inputFromUser.toLowerCase()
+  let finalResult = {};
 
     for (let i = 0; i < modifiedInput.length; i++) {
     let character = modifiedInput[i];
@@ -27,16 +23,14 @@ function countUniqueCharacters(inputFromUser) {
       continue; 
     }
 
-    if (outputResult[character]) {
-      outputResult[character] += 1;
+    if (finalResult[character]) {
+      finalResult[character] += 1;
     } else {
-      outputResult[character] = 1;
+      finalResult[character] = 1;
     }
   }
-
-  console.log("Output:", outputResult);
-  return true;
+  return finalResult;
 }
 
-countUniqueCharacters("hello");
-countUniqueCharacters("hello world");
+console.log("Output: "+JSON.stringify(countUniqueCharacters("hello")));
+console.log("Output: "+JSON.stringify(countUniqueCharacters("hello world")));

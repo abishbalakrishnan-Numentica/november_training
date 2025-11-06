@@ -8,22 +8,18 @@ Output: "javascript from world hello"
 
 function reverseWordsInSentence(inputFromUser){
   console.log("Input: "+inputFromUser);
- //Edge Case 1: To check if the input is String
-  if (typeof inputFromUser !== "string") {
-    console.error( "Error: Input must be a string.");
-    return false;
-  }
- //Edge Case 2: To check if the input is empty String
-  if (inputFromUser.trim().length === 0) {
-    console.error("Empty String");
-    return false;
-  }
+  const trimmedInput = inputFromUser.trim();
+ //Edge Case 1: To check if the input is Invalid
+   if (typeof trimmedInput !== "string" || trimmedInput.trim().length === 0) {
+     console.error("Error: Input must be a non-empty string.");
+     return null;
+    }
 
 let wordList =[];
 let currentWord =""
 let reverseSentence=""
-for(let i=0;i<inputFromUser.length;i++){
-    let character=inputFromUser[i];
+for(let i=0;i<trimmedInput.length;i++){
+    let character=trimmedInput[i];
     if(character!==" "){
         currentWord +=character
     }
@@ -42,8 +38,7 @@ for (let i = wordList.length - 1; i >= 0; i--) {
       reverseSentence += " ";
     }
   }
-  console.log("Output: "+reverseSentence);
-  return true;
+  return reverseSentence;
 }
 
-reverseWordsInSentence("hello world from javascript")
+console.log("Output: "+ reverseWordsInSentence("hello world from javascript"));

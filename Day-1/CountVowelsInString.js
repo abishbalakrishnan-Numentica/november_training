@@ -5,23 +5,20 @@ countVowels("numentica ui solutions");
 Output: 9*/
 
 function countVowelsInString(inputFromUser) {
- //Edge Case 1: To check if the input is String
-  if (typeof inputFromUser !== "string") {
-    console.error( "Error: Input must be a string.");
-    return false;
-  }
- //Edge Case 2: To check if the input is empty String
-  if (inputFromUser.trim().length === 0) {
-    console.error("Empty String");
-    return false;
-  }
+  console.log("The Input sentence is: "+ inputFromUser)
+  let trimmedInput = inputFromUser.trim();
+ //Edge Case 1: To check if the input is Invalid
+   if (typeof trimmedInput !== "string" || trimmedInput.trim().length === 0) {
+     console.error("Error: Input must be a non-empty string.");
+     return null;
+    }
 
-  inputFromUser = inputFromUser.toLowerCase();
+  const modifiedInput= inputFromUser.toLowerCase();
   let count = 0;
-  let vowels = "aeiou";
+  const vowels = "aeiou";
 
-  for (let i = 0; i < inputFromUser.length; i++) {
-    let character = inputFromUser[i];
+  for (let i = 0; i < modifiedInput.length; i++) {
+    let character = modifiedInput[i];
     for (let j = 0; j < vowels.length; j++) {
       if (character === vowels[j]) {
         count++;
@@ -29,9 +26,8 @@ function countVowelsInString(inputFromUser) {
       }
     }
   }
-  console.log("The Count of Vowels in the Given Sentence:" + count);
-  return true;
+  
+  return count;
 }
 
-
-countVowelsInString("numentica ui solutions");
+console.log(`The Count of Vowels in the Given Sentence -${"numentica ui solutions"}: `+ countVowelsInString("numentica ui solutions"));

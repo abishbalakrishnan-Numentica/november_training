@@ -6,35 +6,32 @@ Output: "ue"*/
 
 
 function uniqueCharacters(inputFromUser) {
- //Edge Case 1: To check if the input is String
-  if (typeof inputFromUser !== "string") {
-    console.error( "Error: Input must be a string.");
-    return false;
-  }
- //Edge Case 2: To check if the input is empty String
-  if (inputFromUser.trim().length === 0) {
-    console.error("Empty String");
-    return false;
-  }
+  console.log("The Input sentence is: "+ inputFromUser)
+  let trimmedInput = inputFromUser.trim();
+ //Edge Case 1: To check if the input is Invalid
+   if (typeof trimmedInput !== "string" || trimmedInput.trim().length === 0) {
+     console.error("Error: Input must be a non-empty string.");
+     return null;
+    }
 
-  inputFromUser = inputFromUser.toLowerCase();
-  let outputResult = "";
+  const modifiedInput= inputFromUser.toLowerCase();
+  let userOutput =[];
   
-  for (let i = 0; i < inputFromUser.length; i++) {
+  for (let i = 0; i < modifiedInput.length; i++) {
     let count = 0;
-    for (let j = 0; j < inputFromUser.length; j++) {
-      if (inputFromUser[i] === inputFromUser[j]) {
+    for (let j = 0; j < modifiedInput.length; j++) {
+      if (modifiedInput[i] === modifiedInput[j]) {
         count++;
       }
     }
     if (count === 1) {
-      outputResult += inputFromUser[i];
+      userOutput.push(modifiedInput[i]);
     }
   }
-  console.log("The Unique Characters are: " + outputResult)
-  return true;
+ 
+  return userOutput;
 }
 
 
-uniqueCharacters("success");
-uniqueCharacters("devendar");
+console.log("The Unique Characters are: " + uniqueCharacters("success"));
+console.log("The Unique Characters are: " + uniqueCharacters("devendar"));
