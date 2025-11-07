@@ -14,7 +14,7 @@ function mergeUniqueElements(firstList, secondList) {
   }
   //Edge Case: To check the Input is Empty or not
    if (firstList.length === 0 && secondList.length === 0) {
-    console.error("Empty String");
+    console.error("Error: Array is Empty");
     return false;
   }
   let finalResult = [];
