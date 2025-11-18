@@ -19,8 +19,7 @@ function flattenNestedArray(inputFromUser) {
   }
   let outputArray = [];
   let temporaryElement;
-    for(let i=0;i<inputFromUser.length;i++){
-       
+    for(let i=0;i<inputFromUser.length;i++){   
         if(Array.isArray(inputFromUser[i])){
             temporaryElement=inputFromUser[i];
           for(let j=0;j<temporaryElement.length;j++){
@@ -40,5 +39,6 @@ function flattenNestedArray(inputFromUser) {
 flattenNestedArray([1,[2, 3],[4, 5]]);
 flattenNestedArray([1,[2, 4, 5, 3],[8, 9]]);
 flattenNestedArray([1,[2, 4, 5, 3],[8, 9],10,12,[11,13]]);
+
 
 

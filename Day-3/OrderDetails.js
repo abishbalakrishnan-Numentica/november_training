@@ -32,7 +32,7 @@ function getOrderDetails(input) {
   {
     return [];
   }
-  let outputDetails = {};
+  
   for (let item of input) {
     if (
       typeof item.customerId !== "number" ||
@@ -42,9 +42,9 @@ function getOrderDetails(input) {
       isNaN(Date.parse(item.ts)) ||
       item.total <= 0
     ) {
-      continue;
+      return [];
     }
-
+    let outputDetails = {};
     const id = item.customerId;
 
     if (!outputDetails[id]) {

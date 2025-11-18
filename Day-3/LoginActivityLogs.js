@@ -82,9 +82,9 @@ function getLoginSummary(logDetails) {
   for (let i = 0; i < finalOutput.length; i++) {
     for (let j = i + 1; j < finalOutput.length; j++) {
       if (finalOutput[i].lastLoginAt < finalOutput[j].lastLoginAt) {
-        const temp = finalOutput[i];
+        const temporaryValue = finalOutput[i];
         finalOutput[i] = finalOutput[j];
-        finalOutput[j] = temp;
+        finalOutput[j] = temporaryValue;
       }
     }
   }

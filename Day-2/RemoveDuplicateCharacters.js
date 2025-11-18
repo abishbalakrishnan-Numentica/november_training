@@ -10,7 +10,7 @@ function removeDuplicateChars(inputFromUser) {
   let trimmedInput = inputFromUser.trim();
 
   // Edge Case 1: To check if the input is Invalid
-  if (typeof trimmedInput !== "string" || trimmedInput.length === 0) {
+  if (typeof inputFromUser !== "string" || trimmedInput.length === 0) {
     console.error("Error: Input must be a non-empty string.");
     return null;
   }
@@ -22,14 +22,20 @@ function removeDuplicateChars(inputFromUser) {
   for (let i = 0; i < modifiedInput.length; i++) {
     let character = modifiedInput[i];
     if (!duplicateChars[character]) {
-      duplicateChars[character] = true;
-      userOutput += character;
+      if(character==" "){
+        continue;
+      }
+      else{}
+        duplicateChars[character] = true;
+         userOutput += character;
+        }
+
     }
-  }
+  
 
   return userOutput;
 }
 
-console.log("The Unique Characters are: " + removeDuplicateChars("programming")); 
+console.log("The Unique Characters are: " + removeDuplicateChars("progra  mming")); 
 console.log("The Unique Characters are: " + removeDuplicateChars("success"));     
 console.log("The Unique Characters are: " + removeDuplicateChars("devendar"));   
