@@ -28,9 +28,8 @@ Identify who has worked the most
 3. list todos whose dependsOn includes an id not present in todos*/
 
 // 1. Compute total estimateHrs per assignee for todos not "done"
-function identifyTopPerformer(todos,person){
+function identifyTopPerformer(todos,people){
 let estimatedMap = {};
-
 for (let todo of todos) {
   if (todo.status !== "done" && todo.assigneeId !== null) {
     if (!estimatedMap[todo.assigneeId]) {
@@ -39,29 +38,30 @@ for (let todo of todos) {
     estimatedMap[todo.assigneeId] += todo.estimateHrs;
   }
 } 
-
-let result = [];
-
-for (let person of people) {
-  let id = person.id;
-  if (estimatedMap[id]) {
-    result[result.length] = {
-      person: person.name,
-      hrs: estimatedMap[id]
-    };
+//Converting map into readable result array with names.
+let modifiedresult = [];
+  for (const person of people) {
+    const id = person.id;
+    if (estimatedMap[id]) {
+      modifiedresult.push({
+        person: person.name,
+        hrs: estimatedMap[id]
+      });
+    }
   }
-}
+
 console.log("Total estimateHrs per assignee (not done):");
-console.log(result);
+console.log(modifiedresult);
 let maxHrs = -1;
 let topPerson = null;
 
-for (let i = 0; i < result.length; i++) {
-  if (result[i].hrs > maxHrs) {
-    maxHrs = result[i].hrs;
-    topPerson = result[i];
+  for (const result of modifiedresult) {
+    if (result.hrs > maxHrs) {
+      maxHrs = result.hrs;
+      topPerson = result;
+    }
   }
-}
+
 
 console.log("Who has worked the most:")
 console.log(topPerson);
@@ -92,18 +92,16 @@ console.log(duplicatesTitle);
 function findInvalidDependsOn(todos) {
   let validIds = {};
 
-  for (let todo of todos) {
+  for (const todo of todos) {
     validIds[todo.id] = true;
   }
-
   let invalidTodos = [];
-
-  for (let todo of todos) {
+  for (const todo of todos) {
     if (todo.dependsOn) {
-      for (let depId of todo.dependsOn) {
+      for (const depId of todo.dependsOn) {
         if (!validIds[depId]) {
-          invalidTodos[invalidTodos.length] = todo;
-          break;
+          invalidTodos.push(todo);
+          break; 
         }
       }
     }
@@ -114,6 +112,7 @@ function findInvalidDependsOn(todos) {
 }
 
 
-identifyTopPerformer(todos, people);
+
+identifyTopPerformer(todos,people);
 findDuplicateTitle(todos);
 findInvalidDependsOn(todos);
